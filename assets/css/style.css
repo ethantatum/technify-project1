@@ -1,0 +1,67 @@
+.jumbotron {
+    background-image: url(../images/traveler.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.navbar-brand {
+    font-family: 'Staatliches', cursive;
+}
+.title {
+    font-family: 'Staatliches', cursive;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+.subtitle {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+.nav-link {
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
+.card-header {
+    font-family: 'Ubuntu', sans-serif;
+}
+.headers {
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
+.form-control {
+    font-family: 'Oswald', sans-serif;
+}
+td {
+    font-family: 'Oswald', sans-serif;
+}
+.fa-file-code {
+    padding-right: 5px;
+}
+.fa-code-branch, .fa-briefcase {
+    padding-left: 10px;
+}
+.job-design {
+    padding-right: 5px;
+}
+.col-lg-12 {
+    animation-delay: 1s;
+}
+.specific-job {
+    border-radius: 5px;
+    border-style: groove;
+}
+.modal-body {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+.modal-header {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+#localMap {
+    position: center;
+}
+body {
+    background-color: black;
+}

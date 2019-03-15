@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Technify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS reset file -->
+    <link rel="stylesheet" type="reset/css" href="assets/css/reset.css"/>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Carrois+Gothic+SC|Open+Sans|Oswald|Staatliches|Teko|Ubuntu" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Local CSS file --> 
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- Animate CSS Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+    
+</head>
+<body>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><i class="fas fa-file-code" width="30" height="30" class="d-inline-block align-top" alt=""></i>
+            TECHNIFY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav justify-content-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Find A Job</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Post A Job</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Resumé</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron">
+                        <div class="container animated slideInLeft">
+                            <h1 class="title">Technify</h1>
+                            <h3 class="subtitle">Build Your Future</h3>
+                        </div>
+        <div class="container mb-5">
+            
+
+                <div class="row mb-5">
+        
+                    <!-- Sign-Up Card-->
+                    <div class="col-lg-12 animated fadeIn">
+                            <div class="card">
+                                    <div class="card-header bg-dark text-white h4">Search Tech Jobs<i class="fas fa-code-branch"></i></div>
+                                        <div class="card-body">
+                                            <!-- Sign-up Form (note the various input "types")-->
+                                            <form class="form-inline" role="form">
+                                                <div class="form-group">
+                                                    <label class="headers job-design" for="sel1">Job Categories: </label>
+                                                    <select class="form-control" id="category-input">
+                                                        <option selected>Choose a job category</option>
+                                                        <option value="4">Front-End Development</option>
+                                                        <option value="2">Back-End Development</option>
+                                                        <option value="3">Design & User Experience</option>
+                                                    </select>
+                                                </div>
+                                                <hr>
+                                                <div class="form-group">
+                                                    <label class="headers job-design" for=sel1>Job Types: </label>
+                                                    <select class="form-control" id="job-type-input">
+                                                        <option selected>Choose full-time or part-time</option>
+                                                        <option value="1">Full-Time</option>
+                                                        <option value="5">Part-Time</option>
+                                                    </select>
+                                                </div>
+                                                <hr>
+                                                <button class="btn btn-default bg-info text-white headers" id="add-search" type="submit">Find That Job!</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                            </div>
+                   
+                    </div>
+                </div>
+     </div>
+       
+    
+
+    <!-- #exampleModal - Modal in the event of no part-time jobs in given category -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h3 class="modal-title" id="exampleModalLabel">We're Sorry!</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Uh-Oh - No Jobs Available in this Category...Try Selecting a Different Job Type or Category!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End of #exampleModal -->
+
+    <!-- #specificModal - Modal that opens when user clicks on specific job -->
+    <div class="modal fade" id="specificModal" tabindex="-1" role="dialog" aria-labelledby="specificModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h3 class="modal-title" id="specificModalLabel">Learn More!</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="localMap"></div>
+                <h3>Local Tech Meet Ups in <span id="city-name"></span></h3>
+                <div id="meetUps"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="apply-later">Apply Later</button>
+              <a id="specificURL" target="_blank"><button type="button" class="btn btn-warning">Apply Now</button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End of #specificModal -->
+
+    <!-- #noLocationModal - Modal that opens when user clicks on specific job with no location given-->
+    <div class="modal fade" id="noLocationModal" tabindex="-1" role="dialog" aria-labelledby="noLocationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h3 class="modal-title" id="specificModalLabel">Location Is Up To You!</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img id="no-location-image" src="assets/images/workplace-anywhere.png"></img>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="apply-later">Apply Later</button>
+              <a id="genericURL" target="_blank"><button type="button" class="btn btn-warning">Apply Now</button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End of #noLocationModal -->
+
+    <div class="container-fluid mb-5">
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white h4">Job Search Results<i class="fas fa-briefcase"></i></div>
+        
+                            <table class="container-fluid table table-striped">
+                                <thead>
+                                    <tr id="header-info">
+                                        <th class="headers" scope="col">Company</th>
+                                        <th class="headers" scope="col">Location</th>
+                                        <th class="headers" scope="col">Job Type</th>
+                                        <th class="headers" scope="col">Job Description</th>
+                                        <th class="headers" scope="col">Company Tagline</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="job-info">
+ 
+                                </tbody>
+                            </table>
+        
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+    </div>
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+      </button>-->
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <!-- Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!-- Local JS file -->
+    <script src="assets/javascript/app.js"></script>   
+</body>
+</html>
